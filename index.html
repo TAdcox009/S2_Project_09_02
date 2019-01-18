@@ -132,12 +132,69 @@
                 <input name="phone" type="tel" id="phoneBox" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
                     required />
             </fieldset>
+
+            <fieldset id="creditCard">
+                <legend >Credit Card (Required)</legend>
+                <fieldset class="cardLabel" required>
+                    <label for="amex">
+                        <input id="amex" value="Amex" type="radio" />
+                        <img src="sb_amex.png" alt="amex">
+                    </label>
+                    <label for="discover">
+                        <input id="discover" value="Discover" type="radio" />
+                        <img src="sb_discover.png" alt="discover">
+                    </label>
+                    <label for="master">
+                        <input id="master" value="Master" type="radio" />
+                        <img src="sb_master.png" alt="master">
+                    </label>
+                    <label for="visa">
+                        <input id="visa" value="Visa" type="radio" />
+                        <img src="sb_visa.png" alt="visa">
+                    </label>
+                </fieldset>
+            </fieldset>
+
+            <label for="cardBox">Credit Card Number</label>
+            <input type="text" name="cardNumber0" id="cardBox" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$" required />
+
+            <label for="cardMonth">Expiration Date</label>
+                <select id="monthList" required>
+                    <option value="-">--Month--</option>
+                    <option value="1">Janurary (01)</option>
+                    <option value="2">February (02)</option>
+                    <option value="3">March (03)</option>
+                    <option value="4">April (04)</option>
+                    <option value="5">May (05)</option>
+                    <option value="6">June (06)</option>
+                    <option value="7">July (07)</option>
+                    <option value="8">August (08)</option>
+                    <option value="9">September (09)</option>
+                    <option value="10">October (10)</option>
+                    <option value="11">November (11)</option>
+                    <option value="12">December (12)</option>
+                </select>
+                <select id="yearList">
+                    <option value="-">--Year--</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </select>
+                <label for="cscBox">CSC</label>
+                <input type="text" name="cscBox" id="cscBox" max="3" placeholder="nnn" pattern="^\d{3}$" required />
         </form>
 
-        <!-- 
-           11. Create a field set with the ID creditcard, which you use to insert credit card fields. Add the
-legend credit card (required).
-12. Within the creditCard field set, insert another field set containing four label elements, with each label element belonging to the cardLabel class. Within each of the four label elements, insert an option button from the cCard field with the value amex, discover, master, and visa. Make cCard a required field. Follow each option button with an image element containing the image of its corresponding credit card image using the sb_amex.png, sb_discover.png, sb_master.png, and sb_visa.png file  
+        <!--  
+18. After the creditCard field set, insert a button element of the submit type. Within the button, insert the sb_button.png inline image with the alternate text next. (Note: The text for the button is part of the button image, so the value attribute is not needed.)
+19. Save your changes to the file and then go to sb_validate.css file in your editor to design the validation styles for the web form.
+20. Within the Validation Styles section, insert the following style rules to perform inline validation:
+a. For every input element that is not a radio type and that has the focus, change the background color to rgb(255, 218, 165). (Hint: Use the attribute selector input:not([type='radio']) to select input elements that are not radio types.)
+b. For every input element that is not a radio type and that has the focus with a valid value, change the background color to rgb(215, 255, 215) and display the image file sb_valid.png with no tiling in the right edge of the input box.
+c. For every input element that is not a radio type and that has the focus with an invalid value, change the background color to rgb(255, 245, 215) and display the image file sb_invalid.png with no tiling in the right edge of the input box.
+21. Save your changes to the style sheet and then open sb_payment.html in your browser. 22. Verify that you cannot submit the form without all required fields entered in the proper format. 23. Verify the validation checks for the credit card number by confirming that the form rejects
+the following credit card number 6012123456789019 (which does not follow a valid card number pattern). Further verify that the form accepts the following credit card number 6011123456789019 (which follows a valid card number pattern).
  -->
 
         <aside>
