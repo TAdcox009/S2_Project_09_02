@@ -70,68 +70,75 @@
                 <label for="stateBox">State</label>
                 <input name="state" type="text" id="stateBox" list="stateList" required />
                 <datalist id="stateList">
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="AL"></option>
+                    <option value="AK"></option>
+                    <option value="AZ"></option>
+                    <option value="AR"></option>
+                    <option value="CA"></option>
+                    <option value="CO"></option>
+                    <option value="CT"></option>
+                    <option value="DE"></option>
+                    <option value="FL"></option>
+                    <option value="GA"></option>
+                    <option value="HI"></option>
+                    <option value="ID"></option>
+                    <option value="IL"></option>
+                    <option value="IN"></option>
+                    <option value="IA"></option>
+                    <option value="KS"></option>
+                    <option value="KY"></option>
+                    <option value="LA"></option>
+                    <option value="ME"></option>
+                    <option value="MD"></option>
+                    <option value="MA"></option>
+                    <option value="MI"></option>
+                    <option value="MN"></option>
+                    <option value="MS"></option>
+                    <option value="MO"></option>
+                    <option value="MT"></option>
+                    <option value="NE"></option>
+                    <option value="NV"></option>
+                    <option value="NH"></option>
+                    <option value="NJ"></option>
+                    <option value="NM"></option>
+                    <option value="NY"></option>
+                    <option value="NC"></option>
+                    <option value="ND"></option>
+                    <option value="OH"></option>
+                    <option value="OK"></option>
+                    <option value="OR"></option>
+                    <option value="PA"></option>
+                    <option value="RI"></option>
+                    <option value="SC"></option>
+                    <option value="SD"></option>
+                    <option value="TN"></option>
+                    <option value="TX"></option>
+                    <option value="UT"></option>
+                    <option value="VT"></option>
+                    <option value="VA"></option>
+                    <option value="WA"></option>
+                    <option value="WV"></option>
+                    <option value="WI"></option>
+                    <option value="WY"></option>
                 </datalist>
 
                 <label for="zipBox">ZIP/Postal Code</label>
-                <input name="zip" type="text" id="zipBox" />
+                <input name="zip" type="text" id="zipBox" pattern="^\d{5}(-\d{4})?$" />
 
                 <label for="fcountryBox">Country</label>
-                <input name="country" type="text" id="countryBox" required />
+                <input name="country" type="text" id="countryBox" value="United States" required />
 
                 <label for="phoneBox">Phone</label>
-                <input name="phone" type="tel" id="phoneBox" required />
+                <input name="phone" type="tel" id="phoneBox" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"
+                    required />
             </fieldset>
         </form>
+
+        <!-- 
+           11. Create a field set with the ID creditcard, which you use to insert credit card fields. Add the
+legend credit card (required).
+12. Within the creditCard field set, insert another field set containing four label elements, with each label element belonging to the cardLabel class. Within each of the four label elements, insert an option button from the cCard field with the value amex, discover, master, and visa. Make cCard a required field. Follow each option button with an image element containing the image of its corresponding credit card image using the sb_amex.png, sb_discover.png, sb_master.png, and sb_visa.png file  
+ -->
 
         <aside>
             <h1>Menu Ideas</h1>
