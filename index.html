@@ -48,7 +48,10 @@
     <section>
         <h1>Payment Form</h1>
 
+        <!-- this is a form for user to input their information, it is using the post method which sends the data in its own separate data stream so the information cant be stolen -->
         <form id="payment" action="http://www.example.com/sb/payment" method="POST">
+
+            <!-- this fieldset is for billing information it has lables and inputs that are for different things such as your first name, last name, address, phone number, city, street, states. Some of the input boxes are required for the user to submit the form if it is not answered the user will see a red x next to it letting them know to answer it.-->
             <fieldset id="billing">
                 <legend>Billing information (required)</legend>
 
@@ -69,6 +72,8 @@
 
                 <label for="stateBox">State</label>
                 <input name="state" type="text" id="stateBox" list="stateList" required />
+
+                <!-- this is a data list with 50 different options, one for each state, the user can only choose one and it is required for the user to move on. -->
                 <datalist id="stateList">
                     <option value="AL"></option>
                     <option value="AK"></option>
@@ -133,69 +138,68 @@
                     required />
             </fieldset>
 
+            <!-- this is a field set for the users credit card info inside of it is another field set, it has radio buttons so the user can choose which card type they have, it is required for the user to submit the form -->
             <fieldset id="creditCard">
                 <legend >Credit Card (Required)</legend>
                 <fieldset class="cardLabel" required>
-                    <label for="amex">
-                        <input id="amex" value="Amex" type="radio" />
+                    <label class="cardLabel" for="amex">
+                        <input id="amex" value="Amex" type="radio">
                         <img src="sb_amex.png" alt="amex">
                     </label>
-                    <label for="discover">
-                        <input id="discover" value="Discover" type="radio" />
+                    <label class="cardLabel" for="discover">
+                        <input id="discover" value="Discover" type="radio">
                         <img src="sb_discover.png" alt="discover">
                     </label>
-                    <label for="master">
-                        <input id="master" value="Master" type="radio" />
+                    <label class="cardLabel" for="master">
+                        <input id="master" value="Master" type="radio">
                         <img src="sb_master.png" alt="master">
                     </label>
-                    <label for="visa">
-                        <input id="visa" value="Visa" type="radio" />
+                    <label class="cardLabel" for="visa">
+                        <input id="visa" value="Visa" type="radio">
                         <img src="sb_visa.png" alt="visa">
                     </label>
                 </fieldset>
+
+                <!-- the label is giving the input box the name of "credit card number" and the input has a a pattern so the user cant type in any random number it has to be a credit card number. -->
+                    <label for="cardBox">Credit Card Number</label>
+                    <input type="text" name="cardNumber0" id="cardBox" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$" required />
+        
+                    <!-- this label has options in it so the user can choose which month and year their card expires in, it is required for the user to submit the form -->
+                    <label for="cardMonth">Expiration Date</label>
+                        <select id="monthList" required>
+                            <option value="-">--Month--</option>
+                            <option value="1">Janurary (01)</option>
+                            <option value="2">February (02)</option>
+                            <option value="3">March (03)</option>
+                            <option value="4">April (04)</option>
+                            <option value="5">May (05)</option>
+                            <option value="6">June (06)</option>
+                            <option value="7">July (07)</option>
+                            <option value="8">August (08)</option>
+                            <option value="9">September (09)</option>
+                            <option value="10">October (10)</option>
+                            <option value="11">November (11)</option>
+                            <option value="12">December (12)</option>
+                        </select>
+
+                        <select id="yearList">
+                            <option value="-">--Year--</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                        </select>
+                        
+                        <label for="cscBox">CSC</label>
+                        <input type="text" name="cscBox" id="cscBox" max="3" placeholder="nnn" pattern="^\d{3}$" required />
             </fieldset>
 
-            <label for="cardBox">Credit Card Number</label>
-            <input type="text" name="cardNumber0" id="cardBox" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$" required />
-
-            <label for="cardMonth">Expiration Date</label>
-                <select id="monthList" required>
-                    <option value="-">--Month--</option>
-                    <option value="1">Janurary (01)</option>
-                    <option value="2">February (02)</option>
-                    <option value="3">March (03)</option>
-                    <option value="4">April (04)</option>
-                    <option value="5">May (05)</option>
-                    <option value="6">June (06)</option>
-                    <option value="7">July (07)</option>
-                    <option value="8">August (08)</option>
-                    <option value="9">September (09)</option>
-                    <option value="10">October (10)</option>
-                    <option value="11">November (11)</option>
-                    <option value="12">December (12)</option>
-                </select>
-                <select id="yearList">
-                    <option value="-">--Year--</option>
-                    <option value="2017">2017</option>
-                    <option value="2018">2018</option>
-                    <option value="2019">2019</option>
-                    <option value="2020">2020</option>
-                    <option value="2021">2021</option>
-                </select>
-                <label for="cscBox">CSC</label>
-                <input type="text" name="cscBox" id="cscBox" max="3" placeholder="nnn" pattern="^\d{3}$" required />
+            <!-- this is a submit button when the user clicks it the information they put in the form will be submitted to the server and the user will get a response letting them know their information went through. -->
+            <button type="submit">
+                <img src="sb_button.png" alt="Next">
+            </button>
         </form>
-
-        <!--  
-18. After the creditCard field set, insert a button element of the submit type. Within the button, insert the sb_button.png inline image with the alternate text next. (Note: The text for the button is part of the button image, so the value attribute is not needed.)
-19. Save your changes to the file and then go to sb_validate.css file in your editor to design the validation styles for the web form.
-20. Within the Validation Styles section, insert the following style rules to perform inline validation:
-a. For every input element that is not a radio type and that has the focus, change the background color to rgb(255, 218, 165). (Hint: Use the attribute selector input:not([type='radio']) to select input elements that are not radio types.)
-b. For every input element that is not a radio type and that has the focus with a valid value, change the background color to rgb(215, 255, 215) and display the image file sb_valid.png with no tiling in the right edge of the input box.
-c. For every input element that is not a radio type and that has the focus with an invalid value, change the background color to rgb(255, 245, 215) and display the image file sb_invalid.png with no tiling in the right edge of the input box.
-21. Save your changes to the style sheet and then open sb_payment.html in your browser. 22. Verify that you cannot submit the form without all required fields entered in the proper format. 23. Verify the validation checks for the credit card number by confirming that the form rejects
-the following credit card number 6012123456789019 (which does not follow a valid card number pattern). Further verify that the form accepts the following credit card number 6011123456789019 (which follows a valid card number pattern).
- -->
 
         <aside>
             <h1>Menu Ideas</h1>

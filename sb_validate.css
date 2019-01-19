@@ -13,3 +13,18 @@ Author: Todd Adcox Jr
 
 
 /* Validation Styles */
+
+/* any input that is not a radio button and is being focused on by the user is going to change to the background color below */
+input:not([type='radio']):focus {
+   background: rgb(255, 218, 165);
+}
+
+/* any input that is not a radio button, is being focused on by the user and is correct it is going to change to the background color below  and a green check mark is going to show at the end.*/
+input:not([type='radio']):focus:valid {
+   background: rgb(215, 255, 215) url(sb_valid.png) bottom right/contain no-repeat;
+}
+
+/* any input that is not a radio button, is being focused on by the user and is incorrect it is going to change to the background color below  and a red x is going to show at the end.*/
+input:not([type='radio']):focus:invalid {
+   background: rgb(255, 245, 215) url(sb_invalid.png) bottom right/contain no-repeat;
+}
