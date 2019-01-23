@@ -140,59 +140,60 @@
 
             <!-- this is a field set for the users credit card info inside of it is another field set, it has radio buttons so the user can choose which card type they have, it is required for the user to submit the form -->
             <fieldset id="creditCard">
-                <legend >Credit Card (Required)</legend>
+                <legend>Credit Card (Required)</legend>
                 <fieldset class="cardLabel" required>
                     <label class="cardLabel" for="amex">
-                        <input id="amex" value="Amex" type="radio">
+                        <input name="card" id="amex" value="Amex" type="radio">
                         <img src="sb_amex.png" alt="amex">
                     </label>
                     <label class="cardLabel" for="discover">
-                        <input id="discover" value="Discover" type="radio">
+                        <input name="card" id="discover" value="Discover" type="radio">
                         <img src="sb_discover.png" alt="discover">
                     </label>
                     <label class="cardLabel" for="master">
-                        <input id="master" value="Master" type="radio">
+                        <input name="card" id="master" value="Master" type="radio">
                         <img src="sb_master.png" alt="master">
                     </label>
                     <label class="cardLabel" for="visa">
-                        <input id="visa" value="Visa" type="radio">
+                        <input name="card" id="visa" value="Visa" type="radio">
                         <img src="sb_visa.png" alt="visa">
                     </label>
                 </fieldset>
 
                 <!-- the label is giving the input box the name of "credit card number" and the input has a a pattern so the user cant type in any random number it has to be a credit card number. -->
-                    <label for="cardBox">Credit Card Number</label>
-                    <input type="text" name="cardNumber0" id="cardBox" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$" required />
-        
-                    <!-- this label has options in it so the user can choose which month and year their card expires in, it is required for the user to submit the form -->
-                    <label for="cardMonth">Expiration Date</label>
-                        <select id="monthList" required>
-                            <option value="-">--Month--</option>
-                            <option value="1">Janurary (01)</option>
-                            <option value="2">February (02)</option>
-                            <option value="3">March (03)</option>
-                            <option value="4">April (04)</option>
-                            <option value="5">May (05)</option>
-                            <option value="6">June (06)</option>
-                            <option value="7">July (07)</option>
-                            <option value="8">August (08)</option>
-                            <option value="9">September (09)</option>
-                            <option value="10">October (10)</option>
-                            <option value="11">November (11)</option>
-                            <option value="12">December (12)</option>
-                        </select>
+                <label for="cardBox">Credit Card Number</label>
+                <input type="text" name="cardNumber0" id="cardBox" pattern="^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$"
+                    required />
 
-                        <select id="yearList">
-                            <option value="-">--Year--</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
-                            <option value="2020">2020</option>
-                            <option value="2021">2021</option>
-                        </select>
-                        
-                        <label for="cscBox">CSC</label>
-                        <input type="text" name="cscBox" id="cscBox" max="3" placeholder="nnn" pattern="^\d{3}$" required />
+                <!-- this label has options in it so the user can choose which month and year their card expires in, it is required for the user to submit the form -->
+                <label for="cardMonth">Expiration Date</label>
+                <select id="monthList" required>
+                    <option value="-">--Month--</option>
+                    <option value="1">Janurary (01)</option>
+                    <option value="2">February (02)</option>
+                    <option value="3">March (03)</option>
+                    <option value="4">April (04)</option>
+                    <option value="5">May (05)</option>
+                    <option value="6">June (06)</option>
+                    <option value="7">July (07)</option>
+                    <option value="8">August (08)</option>
+                    <option value="9">September (09)</option>
+                    <option value="10">October (10)</option>
+                    <option value="11">November (11)</option>
+                    <option value="12">December (12)</option>
+                </select>
+
+                <select id="yearList">
+                    <option value="-">--Year--</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                </select>
+
+                <label for="cscBox">CSC</label>
+                <input type="text" name="cscBox" id="cscBox" max="3" placeholder="nnn" pattern="^\d{3}$" required />
             </fieldset>
 
             <!-- this is a submit button when the user clicks it the information they put in the form will be submitted to the server and the user will get a response letting them know their information went through. -->
